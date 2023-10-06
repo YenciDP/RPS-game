@@ -1,11 +1,14 @@
-let randomN = Math.floor(Math.random() * 3) ;
-let usersChoice= prompt("Choose Rock, Paper or Scissors");
-let fixedChoice=usersChoice.toLowerCase();
+
+/*let usersChoice= prompt("Choose Rock, Paper or Scissors");
+let fixedChoice=usersChoice.toLowerCase();*/
 let computersChoice;
+let playerScore=0;
+let cpuScore=0;
 
   let computerChooses =(random)=>{
+    let randomN = Math.floor(Math.random() * 3) ;
     random=randomN;
-
+    
     switch (random) {
       case 0:
         computersChoice="paper";
@@ -19,11 +22,14 @@ let computersChoice;
 
     }
   }
-computerChooses();
+
 
 
 let round=(cpuChoice, playersChoice)=>{
-  cpuChoice=computersChoice;
+  let usersChoice= prompt("Choose Rock, Paper or Scissors");
+  let fixedChoice=usersChoice.toLowerCase();
+  computerChooses();
+  cpuChoice=computersChoice
   playersChoice=fixedChoice;
 
     if (playersChoice !== "scissors" && playersChoice !== "rock" && playersChoice !== "paper") {
@@ -36,32 +42,54 @@ let round=(cpuChoice, playersChoice)=>{
 
       if (cpuChoice==="scissors" && playersChoice==="rock"){
       console.log(`${playersChoice} beats ${cpuChoice}, Player gets a point!`)
+      playerScore++;
     };
 
        if(cpuChoice==="rock" && playersChoice==="paper"){
         console.log(`${playersChoice} beats ${cpuChoice}, Player gets a point!`)
+        playerScore++;
       };
 
         if (cpuChoice==="paper" && playersChoice==="scissors"){
         console.log(`${playersChoice} beats ${cpuChoice}, Player gets a point!`)
+        playerScore++;
       };
     
 
      if(cpuChoice==="paper" && playersChoice==="rock"){
         console.log(`${cpuChoice} beats ${playersChoice}, Cpu gets a point!`)
+        cpuScore++;
       };
       
      if (cpuChoice==="scissors" && playersChoice==="paper"){
-     console.log(`${cpuChoice} beats ${playersChoice}, Cpu gets a point!`)};
+     console.log(`${cpuChoice} beats ${playersChoice}, Cpu gets a point!`)
+      cpuScore++;
+    };
     
       
      if (cpuChoice==="rock" && playersChoice==="scissors"){
      console.log(`${cpuChoice} beats ${playersChoice}, Cpu gets a point!`)
+     cpuScore++;
+      
     };
       
     }
   
  
-round()
+let game =()=>{
 
+  while (playerScore<3 && cpuScore <3) {
+    round();
+    console.log(`current score Player: ${playerScore} - Cpu: ${cpuScore}`);
+  } 
+  if (playerScore === 3) {
+    console.log(`You win`);
+  } if (cpuScore=== 3) {
+    console.log(`Try again, Cpu wins!`);
+  }
+
+
+}
+
+game();
 
