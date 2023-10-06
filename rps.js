@@ -26,6 +26,10 @@ let round=(cpuChoice, playersChoice)=>{
   cpuChoice=computersChoice;
   playersChoice=fixedChoice;
 
+    if (playersChoice !== "scissors" && playersChoice !== "rock" && playersChoice !== "paper") {
+        console.log(`"${playersChoice}" is not a valid Rock Paper Scissors choice`);
+    }
+
       if (cpuChoice===playersChoice) {
         console.log("It's a tie!");
       } 
