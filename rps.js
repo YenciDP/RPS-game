@@ -93,5 +93,4 @@ let game =()=>{
 
 }
 
-game();
-
+//game();
