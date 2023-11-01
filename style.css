@@ -1,0 +1,42 @@
+html{margin: 0;
+padding: 0;
+margin-top: 0;
+padding-top: 0;}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+header{
+  background-color: #0d363a;
+  padding:30px;
+  margin: 0;
+}
+
+header h1{
+  text-align: center;
+  font-size: 85px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  color: #f6ae3b;
+  padding: 0;
+  margin: 0;
+}
+.game{ 
+  text-align: center;
+  padding-top: 30px;
+}
+.game p{
+  font-family: Arial, Helvetica, sans-serif;
+  color: #0d363a;
+  font-size: 30px;
+  font-weight: bold;
+}
+.buttons{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.buttons img{
+ max-width: 300px;;
+}
