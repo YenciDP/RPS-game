@@ -15,13 +15,16 @@ header{
 
 header h1{
   text-align: center;
-  font-size: 85px;
+  font-size: 65px;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   color: #f6ae3b;
   padding: 0;
-  margin: 0;
+  margin: 0; 
+  
 }
-.game{ 
+.game{
+  display: flex;
+  flex-direction: column; 
   text-align: center;
   padding-top: 30px;
 }
@@ -34,9 +37,44 @@ header h1{
 .buttons{
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
   flex-wrap: wrap;
 }
 .buttons img{
- max-width: 300px;;
+ max-width: 250px;
+ margin: 1vw;
+ width: 30%;
+ border: solid ;
+ border-color: #0d363a;
+ border-width: 100%;
+border-radius: 100%;
+transition: 0.2s;
+}
+.buttons img:hover{
+  border-color: #f6ae3b;
+  transform: scale(1.1);
+  box-shadow: 0px 0px 10px 5px #f1c886 ;
+  
+}
+
+.container {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #0d363a;
+  margin: 1vw 30vw 1vw ;
+  border-radius: 10%;
+}
+.score-board{
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.container p{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  color: #f6ae3b;
 }
