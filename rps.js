@@ -1,16 +1,24 @@
 
-/*let usersChoice= prompt("Choose Rock, Paper or Scissors");
-let fixedChoice=usersChoice.toLowerCase();*/
 let computersChoice; //save result from computer chooses
 let playerScore=0;
 let cpuScore=0;
+const player=document.querySelector("#playerScore"),
+         cpu=document.querySelector("#cpuScore"),
+         rock=document.querySelector("#rock"),
+          scissors= document.querySelector("#scissors"),
+          paper= document.querySelector('#paper'),
+          message=document.querySelector(".message");
+
+
+
+
 
 // get random number and choose rock paper or scissors
-  let computerChooses =(random)=>{
+  let computerChooses =()=>{
     let randomN = Math.floor(Math.random() * 3) ;
-    random=randomN;
     
-    switch (random) {
+    
+    switch (randomN) {
       case 0:
         computersChoice="paper";
         break;
@@ -22,61 +30,73 @@ let cpuScore=0;
         break;
 
     }
+    return computersChoice
   }
 
 
   //play 1 round of the game
 let round=(cpuChoice, playersChoice)=>{
-  let usersChoice= prompt("Choose Rock, Paper or Scissors"); //get user choice
-  let fixedChoice=usersChoice.toLowerCase(); //make it lowercase so there won't be trouble
-  computerChooses(); //execute computer choose so u get a different choice per round
-  cpuChoice=computersChoice
-  playersChoice=fixedChoice;
-
 
     if (playersChoice !== "scissors" && playersChoice !== "rock" && playersChoice !== "paper") {
         console.log(`"${playersChoice}" is not a valid Rock Paper Scissors choice`);
     }
 
       if (cpuChoice===playersChoice) {
-        console.log("It's a tie!");
+        message.textContent="I'ts a tie!";
       } 
 
       if (cpuChoice==="scissors" && playersChoice==="rock"){
-      console.log(`${playersChoice} beats ${cpuChoice}, Player gets a point!`)
+      message.textContent="Rock Beats Scissors! Player gets a point"
       playerScore++;
+      player.textContent=playerScore;
     };
 
        if(cpuChoice==="rock" && playersChoice==="paper"){
-        console.log(`${playersChoice} beats ${cpuChoice}, Player gets a point!`)
+        message.textContent="Paper Beats Rock! Player gets a point"
         playerScore++;
+        player.textContent=playerScore;
       };
 
         if (cpuChoice==="paper" && playersChoice==="scissors"){
-        console.log(`${playersChoice} beats ${cpuChoice}, Player gets a point!`)
+        message.textContent="Scissors Beats Paper! Player gets a point"
         playerScore++;
+        player.textContent=playerScore;
       };
     
 
      if(cpuChoice==="paper" && playersChoice==="rock"){
-        console.log(`${cpuChoice} beats ${playersChoice}, Cpu gets a point!`)
+        message.textContent=`Paper Beats Rock, Cpu gets a point!`
         cpuScore++;
+         cpu.textContent=cpuScore;
       };
       
      if (cpuChoice==="scissors" && playersChoice==="paper"){
-     console.log(`${cpuChoice} beats ${playersChoice}, Cpu gets a point!`)
+     message.textContent=`Scissors Beats Paper, Cpu gets a point!`
       cpuScore++;
+       cpu.textContent=cpuScore;
     };
     
       
      if (cpuChoice==="rock" && playersChoice==="scissors"){
-     console.log(`${cpuChoice} beats ${playersChoice}, Cpu gets a point!`)
+     message.textContent=`Rock Beats Scissors, Cpu gets a point!`
      cpuScore++;
+     cpu.textContent=cpuScore;
       
     };
-      
+
+    if (playerScore===3) {
+      message.textContent="Congratulations, You Win!"
+    }
+    if (cpuScore===3) {
+      message.textContent="Try Again, Cpu Wins!"
+    }
+
     }
   
+    paper.onclick= ()=> { round(computerChooses(), "paper")}
+    rock.onclick= ()=> { round(computerChooses(), "rock")}
+    scissors.onclick= ()=> { round(computerChooses(), "scissors")}
+
  //loop to count rounds and score
 let game =()=>{
   //use and so if any of the 2 is true then stops
