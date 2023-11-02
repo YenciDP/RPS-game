@@ -86,9 +86,17 @@ let round=(cpuChoice, playersChoice)=>{
 
     if (playerScore===3) {
       message.textContent="Congratulations, You Win!"
+      playerScore=0;
+      cpuScore=0;
+      cpu.textContent=cpuScore;
+      player.textContent=playerScore;
     }
     if (cpuScore===3) {
       message.textContent="Try Again, Cpu Wins!"
+      playerScore=0;
+      cpuScore=0;
+      cpu.textContent=cpuScore;
+      player.textContent=playerScore;
     }
 
     }
