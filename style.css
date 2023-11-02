@@ -73,6 +73,7 @@ transition: 0.2s;
   width: 60%;
   border-radius: 10%;
   margin: 5vw ;
+  margin-top: 20px;
 }
 .score-board{
   justify-content: space-evenly;
@@ -99,6 +100,14 @@ transition: 0.2s;
 #playerScore {
   font-size: 40px;
   margin: 0;
+}
+
+.message{
+  font-size: 20px;
+  color: #0d363a;
+  font-weight: bold;
+  margin-bottom: 0;
+  transition: 0.1s;
 }
 
 footer{
