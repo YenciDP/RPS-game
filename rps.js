@@ -7,7 +7,12 @@ const player=document.querySelector("#playerScore"),
          rock=document.querySelector("#rock"),
           scissors= document.querySelector("#scissors"),
           paper= document.querySelector('#paper'),
-          message=document.querySelector(".message");
+          message=document.querySelector(".message"),
+          paperSound=new Audio("sfx/paper.mp3"),
+          rockSound= new Audio("sfx/rock.mp3"),
+          scissorsSound= new Audio("sfx/sword.mp3"),
+          winSound= new Audio("sfx/win.mp3"),
+           loseSound= new Audio("sfx/lose.mp3");
 
 
 
@@ -90,6 +95,7 @@ let round=(cpuChoice, playersChoice)=>{
       cpuScore=0;
       cpu.textContent=cpuScore;
       player.textContent=playerScore;
+      winSound.play()
     }
     if (cpuScore===3) {
       message.textContent="Try Again, Cpu Wins!"
@@ -97,13 +103,23 @@ let round=(cpuChoice, playersChoice)=>{
       cpuScore=0;
       cpu.textContent=cpuScore;
       player.textContent=playerScore;
+      loseSound.play()
     }
 
     }
   
-    paper.onclick= ()=> { round(computerChooses(), "paper")}
-    rock.onclick= ()=> { round(computerChooses(), "rock")}
-    scissors.onclick= ()=> { round(computerChooses(), "scissors")}
+    paper.onclick= ()=> {
+       round(computerChooses(), "paper")
+       paperSound.play()
+      }
+    rock.onclick= ()=> { 
+      round(computerChooses(), "rock")
+     rockSound.play() 
+    }
+    scissors.onclick= ()=> {
+       round(computerChooses(), "scissors")
+      scissorsSound.play()
+      }
 
  //loop to count rounds and score
 let game =()=>{
