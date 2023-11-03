@@ -117,11 +117,25 @@ footer{
       font-family: Arial, Helvetica, sans-serif;
       font-weight: bold;
       font-size: 15px;
+      display: flex;
+      gap: 0px;
+      justify-content: center;
+ 
 }
 footer p{
   margin: 0%;
   padding-top: 1vh;
   font-size: 2vh;
   font-weight: bold;
+}
+footer img{
+  width: 4vh;
+  padding-left: 0%;
+  margin-left: 0;
+  transition: 0.7s;
+}
+
+footer img:hover {
+  transform: rotateZ(360deg);
 }
 
