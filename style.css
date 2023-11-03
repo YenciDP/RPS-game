@@ -12,16 +12,17 @@ body {
   text-align: center;
   align-content: space-between;
 min-height: 100vh;
+
 }
 header{
   background-color: #0d363a;
-  padding:30px;
+  padding:3vw;
   margin: 0;
 }
 
 header h1{
   text-align: center;
-  font-size: 65px;
+  font-size: 6vmax;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   color: #f6ae3b;
   padding: 0;
@@ -42,7 +43,7 @@ header h1{
 .game p{
   font-family: Arial, Helvetica, sans-serif;
   color: #0d363a;
-  font-size: 30px;
+  font-size: 3vmax;
   font-weight: bold;
 }
 .buttons{
@@ -53,7 +54,8 @@ header h1{
 }
 .buttons img{
  max-width: 250px;
- margin: 1vw;
+ margin: 2.5vmin;
+ margin-top: 0.5vh;
  width: 30%;
  border: solid ;
  border-color: #0d363a;
@@ -63,7 +65,7 @@ transition: 0.2s;
 }
 .buttons img:hover{
   border-color: #f6ae3b;
-  transform: scale(1.1);
+  transform: scale(1.2);
   box-shadow: 0px 0px 10px 5px #f1c886 ;
   
 }
@@ -75,9 +77,8 @@ transition: 0.2s;
   justify-content: center;
   align-self: center;
   background-color: #0d363a;
-  max-width: 300px;
-  width: 60%;
-  border-radius: 10%;
+  width: 60vmin;
+  border-radius: 7vw;
   margin: 5vw ;
   margin-top: 20px;
 }
@@ -85,7 +86,7 @@ transition: 0.2s;
   justify-content: space-evenly;
   display: flex;
   flex-direction: row;
-  gap: 2vw;
+  gap: 2vmin;
   
 }
 
@@ -96,23 +97,23 @@ transition: 0.2s;
   color: #f6ae3b;
 }
 .score-title{
-  margin: 1vw;
+  margin: 2vh;
 }
 
 #cpuScore {
-  font-size: 40px;
+  font-size: 4vh;
   margin: 0;
 }
 #playerScore {
-  font-size: 40px;
+  font-size: 4vh;
   margin: 0;
 }
 
 .message{
-  font-size: 20px;
+  font-size: 4vh;
   color: #0d363a;
   font-weight: bold;
-  margin-bottom: 0;
+  margin: 2vh;
   transition: 0.1s;
 }
 
@@ -121,8 +122,6 @@ footer{
       color: #fecd59;
       text-align: center;
       font-family: Arial, Helvetica, sans-serif;
-      font-weight: bold;
-      font-size: 15px;
       display: flex;
       gap: 0px;
       justify-content: center;
